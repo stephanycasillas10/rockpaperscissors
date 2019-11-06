@@ -10,6 +10,6 @@
 // DOCUMENT READY FUNCTION BELOW
 $('#shoot').click(function(){
     var inputValue=$('#input').val()
-    $('#userChoice').append(inputValue);
+    $('#userChoice').text(inputValue);
 });
 
