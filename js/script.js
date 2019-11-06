@@ -12,4 +12,8 @@ $('#shoot').click(function(){
     var inputValue=$('#input').val()
     $('#userChoice').text(inputValue);
 });
+ var userChoice=""
+ var computerChoice=""
+ var winner=""
+ var randomNumber=Math.random();
 
