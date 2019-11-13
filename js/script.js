@@ -8,12 +8,36 @@
 
 
 // DOCUMENT READY FUNCTION BELOW
-$('#shoot').click(function(){
-    var inputValue=$('#input').val()
-    $('#userChoice').text(inputValue);
+$( "document" ).ready(function() {
+
+    var computerChoice;
+    var winner;
+    var randomNumber;
+
+    $('#shoot').click(function(){
+        var userChoice=$('#input').val()
+        $('#userChoice').text(userChoice);
+
+        randomNumber=Math.floor((Math.random()*3)+1);
+
+        if (randomNumber===1){
+        $("#computerChoice").text("rock");
+        var computerChoice="rock"
+        }
+
+        else if(randomNumber===2){
+        $("#computerChoice").text("paper");
+        var computerChoice="paper"
+        }
+
+        else if(randomNumber===3){
+        $("#computerChoice").text("scissors");
+        var computerChoice="scissors"
+        }
+
+        
+        
+    });
 });
- var userChoice=""
- var computerChoice=""
- var winner=""
- var randomNumber=Math.random();
+
 
