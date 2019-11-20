@@ -15,8 +15,11 @@ $( "document" ).ready(function() {
     var randomNumber;
 
     $('#shoot').click(function(){
-        var userChoice=$('#input').val()
+        var userChoice=$('#input').val().toLowerCase()
+        console.log(userChoice)
         $('#userChoice').text(userChoice);
+
+        $('#input').val("");
 
         randomNumber=Math.floor((Math.random()*3)+1);
 
@@ -34,7 +37,21 @@ $( "document" ).ready(function() {
         $("#computerChoice").text("scissors");
         var computerChoice="scissors"
         }
+        
+        if ((computerChoice==="rock" && userChoice==="rock")||(computerChoice==="paper"&& userChoice==="paper")
+        ||(computerChoice==="scissors"&& userChoice==="scissors")){
+            $('#Result').text("Tie");
+        }
 
+        else if ((computerChoice==="rock"&& userChoice==="paper")
+        ||(computerChoice==="paper"&& userChoice==="scissors")||(computerChoice==="scissors"&& userChoice==="rock")){
+            $('#Result').text("You Won!")
+        }
+
+        else if ((computerChoice==="rock"&& userChoice==="scissors")||
+        (computerChoice==="paper"&& userChoice==="rock")||(computerChoice==="scissors"&& userChoice==="paper")){
+            $("#Result").text("You Lost")
+        }
         
         
     });
